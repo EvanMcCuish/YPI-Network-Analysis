@@ -1,0 +1,25 @@
+Once the Pathways data are downloaded from ICPSR, several steps are necessary to set-up the data. 
+
+First, there is an assumption of equidistant measurement periods. Although the Pathways data include 10 measurement intervals,
+the YPI was not part of the baseline assessment and the first few waves had 6-month intervals. We therefore included ONLY the
+12-month, 24-month, 36-month, 48-month, 60-month, 72-month, and 84-month measurement periods, which corresponds to six time intervals.
+
+Second, The 12, 24, and 36-month follow-up periods only looked at counts of criminal behavior in the previous six months (the others
+looked at counts of criminal behavior in the last 12 months). Criminal behavior at the 12, 24, and 36-month follow-up periods was
+therefore measured by combining offending at the wave of interest with the wave immediately prior (e.g., the 12 month period 
+includes criminal behavior involvement reported in that wave as well as criminal behavior reported in the 6-month wave).
+If a specific item from the SRO was endorsed at both waves, it was counted only once given that the emphasis was on criminal versatility.
+
+Third, we converted the SPSS dataset from wide to long format (see SPSS Syntax file). Note that we re-named variables from how they 
+were worded in the original dataset for clarity. 
+
+Fourth, we imported the SPSS dataset into R Studio and ran the missForest package to impute missing data on the YPI subscales and
+measure of offending versatility. This can be found in the "PPD L Net (Subscales)" file.
+
+Fifth, we ran the code for the network analysis that produced the between-subjects, temporal, and contemporaneous networks.
+This can be found in the "PPD L Net (Subscales)" file.
+
+Additional R code has been included that repeats the abovementioned analyses but with the YPI's three domains rather than 10 subscales.
+As well, code for the bootnet analysis is also included. This shows the reliability of the centrality indices. 
+
+
